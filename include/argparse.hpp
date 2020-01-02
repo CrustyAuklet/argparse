@@ -295,6 +295,11 @@ public:
     mIsRequired = true;
     return *this;
   }
+  
+  Argument &optional() {
+    mIsOptional = true;
+    return *this;
+  }
 
   Argument &implicit_value(std::any aImplicitValue) {
     mImplicitValue = std::move(aImplicitValue);
