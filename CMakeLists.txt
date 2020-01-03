@@ -16,9 +16,12 @@ if(ARGPARSE_BUILD_TESTS)
   add_subdirectory(test)
 endif()
 
-install(TARGETS argparse EXPORT argparseConfig)
+install(TARGETS argparse EXPORT argparseConfig
+        COMPONENT argparse_Development)
 install(EXPORT argparseConfig
         NAMESPACE argparse::
-        DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/argparse)
+        DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/argparse
+        COMPONENT argparse_Development)
 install(FILES ${CMAKE_CURRENT_LIST_DIR}/include/argparse.hpp
-        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/argparse)
+        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/argparse
+        COMPONENT argparse_Development)
